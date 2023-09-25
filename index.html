@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net" rel="preconnect" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/boosted@5.3.2/dist/css/boosted.min.css" rel="stylesheet" integrity="sha384-fyenpx19UpfUhZ+SD9o9IdxeIJKE6upKx0B54OcXy1TqnO660Qw9xw6rOASP+eir" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/boosted@5.3.2/dist/js/boosted.bundle.min.js" integrity="sha384-+lAXqnipqQpjxMdd/9Hp2GOzB4aIouKEYRZ7AE66h68BDob7UlMLpZY7w7SqrC+M" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+
+       .triangle-box {
+  position: relative;
+  display: flex !important;
+  flex-direction: column; /* Set flex-direction to column */
+  align-items: center; /* Center align the content vertically */
+  padding: 20px 20px;
+  margin: 0 25px;
+  
+  background-color: orange;
+  color: #000;
+}
+
+.triangle-box:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top: 10px solid orange;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+
+.orangeWord{
+    text-align: center;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-dark bg-dark ">
+          <div class="container-xl">
+      
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                  <div class="navbar-brand">
+                    <a class="stretched-link" href="#">
+                        <img src="data:image/png;base64,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" alt="Home" class="img-fluid d-inline-block align-top">            </a>
+                  </div>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse flex-column" id="navbarNav">
+          
+                    <ul class="navbar-nav">
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Personal
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Small Business</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Enterprise</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Corporate</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Follow us</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+              
+          </div>
+        </nav>
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg" aria-label="Global navigation - Nav-under example">
+          <div class="container">
+            <div id="global-header-6.1" class="navbar-collapse collapse m-0 global-header-6">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#">Label</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Label</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Label</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Label</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Label</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <div class="container" >
+        <div class="card text-bg-dark">
+            <img src="https://www.beasleyallen.com/wp-content/uploads/beasley-allen-law-firm-community-involvement.jpg" class="card-img" alt="img" style="height: 300px">
+            <div class="card-img-overlay">
+              <h5 class="card-title" style="color: orangered;">CSR</h5>
+              <h1 style="color: orangered;">Orange CSR</h1>
+              <p class="card-text fw-bold">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small>Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+            <div class="smallCard" style="margin: 3%;">
+                <ul role="tablist" class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header" style="display: flex; justify-content: center; text-decoration: none;">
+                    <li role="tab" tabindex="0" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active" aria-controls="lb-tabs-tabs-1" aria-labelledby="ui-id-3" aria-selected="true" aria-expanded="true">
+                      <a href="#lb-tabs-tabs-1" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-3">
+                        <span class="triangle-box">Digital Inclusion</span>
+                      </a>
+                    </li>
+                    <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="lb-tabs-tabs-2" aria-labelledby="ui-id-4" aria-selected="false" aria-expanded="false">
+                      <a href="#lb-tabs-tabs-2" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-4">
+                        <span class="triangle-box">Digital Education</span>
+                      </a>
+                    </li>
+                    <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="lb-tabs-tabs-3" aria-labelledby="ui-id-5" aria-selected="false" aria-expanded="false">
+                      <a href="#lb-tabs-tabs-3" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-5">
+                        <span class="triangle-box">Entrepreneurship</span>
+                      </a>
+                    </li>
+                    <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="lb-tabs-tabs-4" aria-labelledby="ui-id-6" aria-selected="false" aria-expanded="false">
+                      <a href="#lb-tabs-tabs-4" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-6">
+                        <span class="triangle-box">Green Energy</span>
+                      </a>
+                    </li>
+                </ul>
+
+            </div>
+         
+
+          <div class="orangeWord" style="margin: 5%;">
+            <h3>Orange Jordan is keen to enhance digital inclusion programs among individuals and society</h3>
+            <p>Orange Jordan CSR programs are designed with care to bridge digital divide and to empower communities’ and people’s digital lives especially for Youth, Women and People with Disabilities.</p>
+          
+            <div class="sliderCard" style="margin: 5%;">
+              <div class="row justify-content-center"> <!-- Add justify-content-center class to center the content -->
+                <div class="col-sm-3 mb-3 mb-sm-0">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Special title treatment</h5>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Special title treatment</h5>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Special title treatment</h5>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+
+
+      <div class="orangeWord">
+        <h3>Orange Jordan is keen to enhance digital inclusion programs among individuals and society</h3>
+        <p>Orange Jordan CSR programs are designed with care to bridge digital divide and to empower communities’ and people’s digital lives especially for Youth, Women and People with Disabilities.</p>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <footer class="footer bg-dark navbar-dark" >
+        <h2 class="visually-hidden">Sitemap & information</h2>
+        <div class="container-xxl footer-title-content">
+          <h3 class="footer-heading">Sign up to our mailing list</h3>
+          <div class="row"  style="margin: 3%;">
+            <form class="d-flex col-12 col-md-9 col-lg-7 col-xl-6 col-xxl-5 gap-2 gap-md-3">
+              <label for="inputEmail" class="visually-hidden">Email</label>
+              <input type="email" class="form-control text-bg-dark border-dark" id="inputEmail" placeholder="Enter your email">
+              <button type="submit" class="btn btn-secondary btn-inverse text-nowrap">Sign up</button>
+            </form>
+            <h3 class="footer-heading me-md-3 " style="margin: 3%;">Follow us</h3>
+            <ul class="navbar-nav gap-2 flex-row align-self-start">
+              <li><a href="#" class="btn btn-icon btn-social btn-twitter btn-inverse"><span class="visually-hidden">Twitter</span></a></li>
+              <li><a href="#" class="btn btn-icon btn-social btn-facebook btn-inverse"><span class="visually-hidden">Facebook</span></a></li>
+              <li><a href="#" class="btn btn-icon btn-social btn-instagram btn-inverse"><span class="visually-hidden">Instagram</span></a></li>
+              <li><a href="#" class="btn btn-icon btn-social btn-whatsapp btn-inverse"><span class="visually-hidden">WhatsApp</span></a></li>
+              <li><a href="#" class="btn btn-icon btn-social btn-linkedin btn-inverse"><span class="visually-hidden">LinkedIn</span></a></li>
+              <li><a href="#" class="btn btn-icon btn-social btn-youtube btn-inverse"><span class="visually-hidden">YouTube</span></a></li>
+            </ul>
+        
+          </div>
+          <!-- <button class="accordion-button collapsed container-xxl px-1 d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" aria-expanded="true" aria-controls="collapseOne2">
+            Category
+          </button>
+          <span class="d-none d-md-flex">Category</span>
+
+          <span class="d-none d-md-flex">Category</span>
+
+          <span class="d-none d-md-flex">Category</span>
+
+          <span class="d-none d-md-flex">Category</span> -->
+
+        </div>
+      </footer>
+</body>
+</html>
